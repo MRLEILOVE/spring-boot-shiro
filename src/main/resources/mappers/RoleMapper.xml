@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leigq.www.shiro.domain.mapper.RoleMapper">
+
+    <select id="getUserRoles" resultType="com.leigq.www.shiro.domain.entity.Role">
+        SELECT
+          r.*
+        FROM
+          `sys_user` AS u,
+          `sys_role` AS r,
+          `sys_user_role` ur
+        WHERE u.`userId` = ur.`userId`
+          AND r.`roleId` = ur.`roleId`
+          AND u.`userId` = #{userId};
+    </select>
+</mapper>

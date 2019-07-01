@@ -1,0 +1,31 @@
+mybatis:
+    configuration:
+        map-underscore-to-camel-case: true
+        use-generated-keys: true
+    mapper-locations: classpath*:/mappers/**/*.xml
+server:
+    tomcat:
+        uri-encoding: UTF-8
+spring:
+    datasource:
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKPYsCl3alwZlRb1vKoFdVu0LP3Nm/+vH5iOWxI83pkUbrQc13Lxz/VT3D+H+ziaUpUsA+ZjG4iZGTDJWZnP8kcCAwEAAQ==
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: config,stat,wall,slf4j
+        initialSize: 5
+        maxActive: 20
+        maxPoolPreparedStatementPerConnectionSize: 20
+        maxWait: 60000
+        minEvictableIdleTimeMillis: 300000
+        minIdle: 5
+        password: kGJF6c+pzVsf49LGs01ss0yijBGXIpNEp20cMkNCQo3ONaeMNPeoW9M89v+nGeiWs95/D2Ms59uGyydDGUWpmg==
+        poolPreparedStatements: true
+        testOnBorrow: false
+        testOnReturn: false
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/shiro?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=true&serverTimezone=UTC
+        username: root
+        validationQuery: SELECT 1 FROM DUAL
+    thymeleaf:
+      cache: false
