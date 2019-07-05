@@ -6,6 +6,7 @@ import com.leigq.www.shiro.domain.mapper.PermissionMapper;
 import com.leigq.www.shiro.service.IPermissionService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,8 +20,11 @@ import java.util.List;
 @Service
 public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permission> implements IPermissionService {
 
+    @Resource
+    private PermissionMapper permissionMapper;
+
     @Override
     public List<Permission> getRolePermissions(Integer roleId) {
-        return baseMapper.getRolePermissions(roleId);
+        return permissionMapper.getRolePermissions(roleId);
     }
 }

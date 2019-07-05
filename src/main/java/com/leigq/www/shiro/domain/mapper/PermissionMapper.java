@@ -3,6 +3,7 @@ package com.leigq.www.shiro.domain.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.leigq.www.shiro.domain.entity.Permission;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

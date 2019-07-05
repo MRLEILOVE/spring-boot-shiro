@@ -29,6 +29,7 @@ public class Permission implements Serializable {
     @TableId(value = "permissionId", type = IdType.AUTO)
     private Integer permissionId;
 
+    @TableField("available")
     private Boolean available;
 
     @TableField("parentId")
@@ -37,6 +38,7 @@ public class Permission implements Serializable {
     @TableField("parentIds")
     private String parentIds;
 
+    @TableField("permission")
     private String permission;
 
     @TableField("permissionName")
@@ -45,6 +47,7 @@ public class Permission implements Serializable {
     @TableField("resourceType")
     private String resourceType;
 
+    @TableField("url")
     private String url;
 
 

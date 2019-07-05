@@ -2,6 +2,8 @@ package com.leigq.www.shiro.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.leigq.www.shiro.domain.entity.Role;
+import org.apache.ibatis.annotations.Mapper;
+import org.mybatis.spring.annotation.MapperScan;
 
 import java.util.List;
 
@@ -14,6 +16,5 @@ import java.util.List;
  * @since 2019-06-28
  */
 public interface IRoleService extends IService<Role> {
-
     List<Role> getUserRoles(Integer userId);
 }

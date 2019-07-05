@@ -1,8 +1,9 @@
-mybatis:
+mybatis-plus:
     configuration:
         map-underscore-to-camel-case: true
         use-generated-keys: true
     mapper-locations: classpath*:/mappers/**/*.xml
+    type-aliases-package: com.leigq.www.shiro.domain.entity
 server:
     tomcat:
         uri-encoding: UTF-8
@@ -27,3 +28,10 @@ spring:
         url: jdbc:mysql://localhost:3306/shiro?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=true&serverTimezone=UTC
         username: root
         validationQuery: SELECT 1 FROM DUAL
+    thymeleaf:
+      cache: false
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000s
+      password: 111111

@@ -4,6 +4,7 @@ package com.leigq.www.shiro.web;
 import com.leigq.www.shiro.bean.Response;
 import com.leigq.www.shiro.web.exception.LoginException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
@@ -118,6 +119,17 @@ public class GlobalExceptionHand {
         String msg = e.getMessage();
         log.error("登录异常：", e);
         return new Response().failure(msg);
+    }
+
+    /**
+     * 403 - Unauthorized
+     */
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ExceptionHandler(UnauthorizedException.class)
+    public Response handleLoginException(UnauthorizedException e) {
+        String msg = e.getMessage();
+        log.error("用户无权限：", e);
+        return new Response().failure(HttpStatus.FORBIDDEN, "用户无权限!", null);
     }
 
     /**

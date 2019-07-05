@@ -7,6 +7,7 @@ import com.leigq.www.shiro.service.IPermissionService;
 import com.leigq.www.shiro.service.IRoleService;
 import com.leigq.www.shiro.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -14,6 +15,7 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
@@ -91,10 +93,14 @@ public class MyShiroRealm extends AuthorizingRealm {
         }
 
         return new SimpleAuthenticationInfo(
-                user, //这里传入的是user对象，比对的是用户名，直接传入用户名也没错，但是在授权部分就需要自己重新从数据库里取权限
-                user.getPassword(), //密码
-                ByteSource.Util.bytes(user.getCredentialsSalt()),//salt = username + salt
-                getName()  //realm name
+                // 这里传入的是user对象，比对的是用户名，直接传入用户名也没错，但是在授权部分就需要自己重新从数据库里取权限
+                user,
+                // 密码
+                user.getPassword(),
+                // salt = username + salt
+                ByteSource.Util.bytes(user.getCredentialsSalt()),
+                // realm name
+                getName()
         );
     }
 

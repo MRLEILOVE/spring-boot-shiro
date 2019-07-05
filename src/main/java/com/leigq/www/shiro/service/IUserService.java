@@ -1,7 +1,10 @@
 package com.leigq.www.shiro.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.leigq.www.shiro.bean.CacheUser;
 import com.leigq.www.shiro.domain.entity.User;
+
+import java.util.List;
 
 /**
  * <p>
@@ -30,7 +33,7 @@ public interface IUserService extends IService<User> {
      * @param password 密码
      * @return 用户信息
      */
-    User login(String userName, String password);
+    CacheUser login(String userName, String password);
 
 
     /**
@@ -40,4 +43,5 @@ public interface IUserService extends IService<User> {
      */
     void logout();
 
+    List<User> listUsers();
 }

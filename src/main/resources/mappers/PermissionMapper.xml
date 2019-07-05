@@ -9,7 +9,8 @@
           `sys_role` AS r,
           `sys_permission` AS p,
           `sys_role_permission` AS rp
-        WHERE r.`roleId` = rp.`roleId` = p.`permissionId` = rp.`permissionId`
+        WHERE r.`roleId` = rp.`roleId`
+          AND p.`permissionId` = rp.`permissionId`
           AND r.`roleId` = #{roleId};
     </select>
 </mapper>
