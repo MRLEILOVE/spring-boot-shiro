@@ -938,33 +938,44 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 上面我列出了项目中主要的几个类，大家可以对照着项目看，每个类中的注释已经写的很详细了。
 
 ## 使用及测试
+
 我们配置每个接口的权限使用`@RequiresPermissions("user:view")`注解即可，其中`user:view`对应权限表中的权限。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706160507657.png)
+
 1、登录测试
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706160656648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706160825460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
+
 登录成功会将用户信息存入缓存。
 
 2、请求查询用户接口
 
 我们先输入错误的token试试
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706160924408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
+
 我们再输入正确的token试试
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706160956360.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
+
 3、请求用户删除接口
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706161155901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
+
 因为我们没有给此用户配置此权限，所以返回无权限
 
 4、退出登录
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706161535906.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
+
 我们再请求用户列表接口
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706161618536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
 
 ## 感谢
+
 - [springboot整合shiro应用](https://www.cnblogs.com/ll409546297/p/7815409.html)
 
 - [Springboot2.0 集成shiro权限管理](https://www.cnblogs.com/asker009/p/9471712.html)
