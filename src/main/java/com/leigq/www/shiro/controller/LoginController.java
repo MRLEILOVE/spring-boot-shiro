@@ -7,7 +7,6 @@ import com.leigq.www.shiro.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,7 +60,7 @@ public class LoginController {
      * description: 登出
      * create time: 2019/6/28 17:37
      */
-    @GetMapping("/logout")
+    @RequestMapping("/logout")
     public Response logOut() {
         iUserService.logout();
         return response.success("登出成功！");

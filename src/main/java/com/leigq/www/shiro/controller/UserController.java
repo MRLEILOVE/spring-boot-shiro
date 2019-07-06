@@ -6,9 +6,7 @@ import com.leigq.www.shiro.domain.entity.User;
 import com.leigq.www.shiro.service.IUserService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,7 +32,7 @@ public class UserController {
      * 用户查询.
      * @return
      */
-    @RequestMapping("/userList")
+    @GetMapping("/userList")
     @RequiresPermissions("user:view")//权限管理;
     public Response listUsers(){
         List<User> users = iUserService.listUsers();
@@ -45,7 +43,7 @@ public class UserController {
      * 用户添加;
      * @return
      */
-    @RequestMapping("/userAdd")
+    @PostMapping("/userAdd")
     @RequiresPermissions("user:add")//权限管理;
     public String userInfoAdd(){
         return "userAdd";
@@ -55,7 +53,7 @@ public class UserController {
      * 用户删除;
      * @return
      */
-    @RequestMapping("/userDel")
+    @DeleteMapping("/userDel")
     @RequiresPermissions("user:del")//权限管理;
     public String userDel(){
         return "userDel";
