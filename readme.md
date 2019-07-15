@@ -1,3 +1,10 @@
+## 主要框架
+
+![SpringBoot version](https://img.shields.io/badge/SpringBoot-2.1.6.RELEASE-blue.svg)&nbsp;
+![Shiro-Spring version](https://img.shields.io/badge/shiro--spring-1.4.0-orange.svg)&nbsp;
+![druid version](https://img.shields.io/badge/druid-1.0.29-red.svg)&nbsp;
+![mybatis plus version](https://img.shields.io/badge/mybatis--plus-3.1.1-green.svg)&nbsp;
+![shiro-redis version](https://img.shields.io/badge/shiro--redis-3.1.0-yellow.svg)&nbsp;
 
 ## Shiro架构图与基本知识
 
@@ -38,12 +45,6 @@ https://github.com/MRLEILOVE/spring-boot-shiro
 用户、角色、权限、用户-角色、角色-权限，关系如下。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706150822192.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
 
-## 使用的主要框架
-- SpringBoot 2.1.6.RELEASE
-- shiro-spring：1.4.0
-- druid数据库连接池：1.0.29
-- mybatis-plus：3.1.1
-- shiro-redis：3.1.0
 
 ## 项目结构
 下面是整个项目结构，主要类已做注释。
