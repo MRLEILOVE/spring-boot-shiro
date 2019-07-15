@@ -6,6 +6,7 @@
 2、非常简单；其基本功能点如下图所示：
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190706152247236.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODQ1Mzk0,size_16,color_FFFFFF,t_70)
+
 **Authentication**：身份认证/登录，验证用户是不是拥有相应的身份；
 
 **Authorization**：授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如：验证某个用户是否拥有某个角色。或者细粒度的验证某个用户对某个资源是否具有某个权限；
