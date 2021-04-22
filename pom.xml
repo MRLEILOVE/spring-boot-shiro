@@ -19,7 +19,7 @@
         <druid.version>1.0.29</druid.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <mybatis-plus.version>3.1.1</mybatis-plus.version>
-        <shiro-spring.version>1.4.0</shiro-spring.version>
+        <shiro-spring.version>1.7.0</shiro-spring.version>
         <shiro-redis.version>3.1.0</shiro-redis.version>
     </properties>
 
